@@ -6,7 +6,7 @@ export const DishData = [
     image: '../../assets/images/img7.jpg',
     category: 'mains',
     title: 'Risotto',
-    description: 'Don\’t let this humble preparation of the common man’s rice fool you with its simple appearance. This dish is an Italian version of rice cooked in vegetable or meat stock, cheese and wine after frying it briefly in soffritto (sautéed) onions. ',
+    description: 'Don’t let this humble preparation of the common man’s rice fool you with its simple appearance. This dish is an Italian version of rice cooked in vegetable or meat stock, cheese and wine after frying it briefly in soffritto (sautéed) onions. ',
     prize: '12.55',
     comments: [
       {

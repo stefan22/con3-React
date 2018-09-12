@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { DishData } from '../shared/dish-data';
 import { Container, Row, Col } from 'reactstrap';
+import { Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
 import './main-comp.css';
 
 class MainComp extends Component {
@@ -9,69 +9,58 @@ class MainComp extends Component {
     super(props);
 
     this.state = {
-      dishes: DishData,
       selectedDish: null
+     
     }
 
   }// const
 
   onSelectedDish(dish) {
-    console.log('dish id: ', dish.id);
+    console.log('selected dish id: ', dish.id, dish);
     this.setState({
       selectedDish: dish
     });
 
-
   }// selectedDish
 
-  renderSelected(dish) {
+  displaySelected(dish) {
+
     if (dish !== null) {
+
       return (
-        <div className='col-xs-12'>
-          <div className='container'>
-            <section className='is-dish-selected'>
-              <figure>
-                <div className='innertop'>
-                  <h3>{dish.title}</h3>
-                  <img src={dish.image} alt={dish.title} />
-                </div>
-                <div className='inner'>
-                  <p>Id: {dish.id}</p>
-                  <p>Label: {dish.label}</p>
-                  <p>Category: {dish.category}</p>
-                  <p>Prize: £{dish.prize}</p>
-                  <p>Waiver: {dish.release}</p>
-
-                </div>
-              </figure>
-            </section>
-          </div>
+        <div className='col-9'>
+          <Card className='mt-5 mb-5'>
+            <CardImg top src={dish.image} alt={dish.name} />
+            <CardBody>
+              <CardTitle>{dish.title}</CardTitle>
+              <CardText>{dish.description}</CardText>
+            </CardBody>
+          </Card>
         </div>
-
       );
 
-    } else {
-      return (
-        <div></div>
-      )
-    }
+    }// !null
+   
+  
+  }// displaySelected
 
-  }// renderSelected
-
+  
 
 
   render() {
 
-    const dishes = this.state.dishes.map((dish) => {
-      console.log('dish', dish);
+    const dishes = this.props.dishes.map((dish,index) => {
       return (
 
-       
-          <Col md='6'>
-            <div className='dishlist' key={dish.id}>
-              <div className='col-xs-12 col-md-6'>
+          <Col md='6' key={dish.id}>
+            <div className='dishlist'>
+            <div className='col-xs-12 col-md-6'>
+                <a 
+                  onClick={()=> this.onSelectedDish(dish)}
+                  title={dish.title}>  
                   <img className='dish-img'
                   src={dish.image} alt={dish.title} />
+                </a>
               </div>
             <div className='col-xs-12 col-md-6 copy'>
                 <ul>
@@ -107,16 +96,23 @@ class MainComp extends Component {
      
       <Container>
         <Row>
-          
 
           {dishes}
 
-
-          <hr />
-          <br />
-
         </Row>
+
+        <div className='row justify-content-center'>
+        
+            {this.displaySelected(this.state.selectedDish)}
+          
+        </div>
+
+
+
       </Container>
+
+
+      
         
      
     );
