@@ -16,6 +16,9 @@
   + its main identifier be state (responsible for holding the state of application)
   + data fetching, state updates
   + provide data to presentational components
+  
+- list/selected with state
+
 
   
 <br/>
