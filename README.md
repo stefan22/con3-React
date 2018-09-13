@@ -1,23 +1,28 @@
 ### con3-React
 
-> [ReactJs] quickExercises
-
-### things to take into consideration when structuring your implementation approach
-- presentational, container, & functional components
-
-- a `presentational` or `skinny` mainly concerned with rendering the 'view'
-  + how things look (markup,styles)
-  + identifier be number of props - rendering view based on the data passed to them
-    in props.
-  + do not maintain its own local state. It may hold UI state but not beyond that.
-
-- a `container` component or `fat` it may hold data and transfer state to 
-    its children.
-  + its main identifier be state (responsible for holding the state of application)
-  + data fetching, state updates
-  + provide data to presentational components
+#### Components refactored for list/ details
+- starts at main component serving as the container
+  + constructor and state (dishes: DishData, selectedDish: null) .  Only Main comp
   
-- list/selected with state
+- 2 components:
+  + Menu
+  + Details
+  
+  + both imported from main
+    & render jsx.
+    For Menu, passed this.state.dishes and received handleDetails click event in Menu
+    For Details, filter and check id to pass dish to details comp
+    
+- Menu render data via props and placed click evt for details
+
+- Details imported from main, render directly to details
+  + click handle in Menu pass in Jsx for details
+  + setState main comp
+
+
+  
+  
+
 
 
   
