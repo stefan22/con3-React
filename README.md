@@ -2,14 +2,6 @@
 
 > [ReactJs] quickExercises
 
-### things to take into consideration when structuring your implementation approach
-- presentational, container, & functional components
-
-- a `presentational` or `skinny` mainly concerned with rendering the 'view'
-  + how things look (markup,styles)
-  + identifier be number of props - rendering view based on the data passed to them
-    in props.
-  + do not maintain its own local state. It may hold UI state but not beyond that.
 
 ```
     //App.js
