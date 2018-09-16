@@ -11,13 +11,36 @@
     in props.
   + do not maintain its own local state. It may hold UI state but not beyond that.
 
-- a `container` component or `fat` it may hold data and transfer state to 
-    its children.
-  + its main identifier be state (responsible for holding the state of application)
-  + data fetching, state updates
-  + provide data to presentational components
-  
-- list/selected with state
+```
+    //App.js
+    --------
+    console.log('app.js running');
+
+    var template = React.createElement(
+      'h1',
+      null,
+      "some text"
+    );
+
+    const appRoot = document.getElementById('app');
+
+    ReactDOM.render(template, appRoot);
+
+....
+
+
+
+CDN links
+  ....
+    <script src="https://unpkg.com/react@16/umd/react.development.js">
+    </script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js">
+    </script>
+    <script src="./scripts/app.js"></script>
+    
+    </body>
+
+```
 
 
   
